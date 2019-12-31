@@ -493,11 +493,6 @@ if ($ih_page == 'manager') {
 ?>
                     <td class="dataTableContent ih-center ih-vtop"><?php echo zen_image(DIR_WS_CATALOG . $preview_image, addslashes($pInfo->products_name), $width, $height) . '<br />' . $text_default_size; ?></td>
 <?php
-            if (!$main_image) {
-?>
-                    <td class="dataTableContent ih-center">&mdash;</td>
-<?php
-            } else {
                 $preview_image = $tmp_image_medium_preview->get_resized_image(IMAGE_SHOPPING_CART_WIDTH, IMAGE_SHOPPING_CART_HEIGHT, 'generic');
                 list($width, $height) = @getimagesize(DIR_FS_CATALOG . $preview_image);
                 $width = min($width, intval(IMAGE_SHOPPING_CART_WIDTH));
@@ -509,9 +504,7 @@ if ($ih_page == 'manager') {
                 }
 ?>
                     <td class="dataTableContent ih-center ih-vtop"><?php echo $the_image . '<br />' . $text_medium_size . $delete_link; ?></td>
-<?php
-            }
-            
+<?php                        
             $preview_image = $tmp_image_large_preview->get_resized_image(IMAGE_SHOPPING_CART_WIDTH, IMAGE_SHOPPING_CART_HEIGHT, 'generic');
             list($width, $height) = @getimagesize(DIR_FS_CATALOG . $preview_image);
             $width = min($width, intval(IMAGE_SHOPPING_CART_WIDTH));
